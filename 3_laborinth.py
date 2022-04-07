@@ -1,9 +1,16 @@
+import random
+
+START = 12
+FINISH = 24
+ROAD = 1
+WALL = 0
+
 map = [
-    [12, 0, 1, 0, 1],
-    [1, 1, 1, 0, 1],
-    [0, 1, 1, 1, 0],
-    [24, 0, 1, 0, 0],
-    [1, 1, 1, 0, 24]
+    [START, ROAD, ROAD, ROAD, ROAD],
+    [WALL, WALL, WALL, WALL, ROAD],
+    [WALL, WALL, WALL, WALL, ROAD],
+    [WALL, WALL, WALL, WALL, ROAD],
+    [WALL, WALL, WALL, WALL, FINISH]
 ]
 
 start_pos_x = 0 
@@ -15,10 +22,10 @@ x_columns = 5
 def get_next_free_position(current_position_y, current_position_x):
     random_number = random.random()
 
-    can_go_right = current_position_x+1 < x_columns and map[current_position_y][current_position_x+1] == 1
-    can_go_left = current_position_x-1 > 0 and map[current_position_y][current_position_x-1] == 1
-    can_go_bottom = current_position_y+1 < y_rows and map[current_position_y+1][current_position_x] == 1
-    can_go_top = current_position_y-1 > 0 and map[current_position_y-1][current_position_x] == 1
+    can_go_right = current_position_x+1 < x_columns and map[current_position_y][current_position_x+1] == ROAD
+    can_go_left = current_position_x-1 > 0 and map[current_position_y][current_position_x-1] == ROAD
+    can_go_bottom = current_position_y+1 < y_rows and map[current_position_y+1][current_position_x] == ROAD
+    can_go_top = current_position_y-1 > 0 and map[current_position_y-1][current_position_x] == ROAD
 
     if can_go_right:
         print("can go right")
