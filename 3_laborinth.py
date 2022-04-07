@@ -50,7 +50,6 @@ def get_next_free_position(current_position_y, current_position_x):
         print("Finish on top, stopping execution")
         return False
 
-
     available_next_positions = []
 
     if can_go_right:
