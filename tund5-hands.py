@@ -49,8 +49,6 @@ with mp_hands.Hands(
     cv2.circle(image, (right_hand_x, right_hand_y), 10, color, 2)
     cv2.rectangle(image,(460,right_hand_y),(460,right_hand_y+50),(0,255,0),3)
 
-
-
     # Flip the image horizontally for a selfie-view display.
     cv2.imshow('MediaPipe Hands', cv2.flip(image, 1))
     if cv2.waitKey(5) & 0xFF == 27:
